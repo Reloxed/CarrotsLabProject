@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:152724831482:android:3be93dafc4e06813761d43",
+        "mobilesdk_app_id": "1:152724831482:android:67de44a5fda41b2c761d43",
         "android_client_info": {
-          "package_name": "com.example.mapsandplaces"
+          "package_name": "com.example.carrots_lab_project"
         }
       },
       "oauth_client": [
@@ -29,6 +29,13 @@
             {
               "client_id": "152724831482-rcip2tt3k468ae6usbqbnhikq5gprhb9.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "152724831482-fo1tum9ivo7tqg8i7a6jlfijhul6t5tk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mapsandplaces"
+              }
             }
           ]
         }

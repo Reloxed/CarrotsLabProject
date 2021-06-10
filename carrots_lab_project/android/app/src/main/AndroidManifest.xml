@@ -37,5 +37,8 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+       <meta-data android:name="com.here.sdk.access_key_id" android:value="T2YtCNhDQKUMLpdR_n8F4g"/>
+       <meta-data android:name="com.here.sdk.access_key_secret" android:value="_wdTbHqkyinKnende1x7aDMbQm7Lk9vVH3yuR2dI29_qNrZ4FWdEfs2SZ5qSwOf2XPsaxGglRq9oNJdmyXjOjQ"/>
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
