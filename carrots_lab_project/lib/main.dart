@@ -11,7 +11,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MapMain(),
+      theme: ThemeData(
+        primaryColor: Colors.orange,
+        accentColor: Colors.green[900],
+        fontFamily: "Montserrat",
+        textTheme: TextTheme(
+          headline1: TextStyle(fontSize: 32.0, fontWeight: FontWeight.bold),
+          bodyText1: TextStyle(fontSize: 14.0)
+        ),
+        primaryIconTheme: IconThemeData(
+          color: Colors.orange
+        ),
+      ),
+      home: MapMain()
     );
   }
 }
