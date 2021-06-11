@@ -12,11 +12,7 @@ class MapMain extends StatefulWidget {
 class _MapMainState extends State<MapMain> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: AppBar(
-        title: Text("Carrots Lab Map", style: Theme.of(context).textTheme.headline1),
-      ),
-      body: FlutterMap(
+    return new FlutterMap(
         options: new MapOptions(
           center: new LatLng(37.285427171289975, -5.910435014322033),
           zoom: 13.0,
@@ -33,7 +29,7 @@ class _MapMainState extends State<MapMain> {
                 builder: (ctx) => new Container(
                   child: new Icon(
                     Icons.push_pin,
-                    color: Colors.red,
+                    color: Theme.of(context).accentColor,
                     size: 40.0,
                   ),
                 ),
@@ -41,12 +37,6 @@ class _MapMainState extends State<MapMain> {
             ],
           ),
         ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Theme.of(context).primaryColor,
-        items: [BottomNavigationBarItem(icon: Icon(Icons.map), label: "Mapa"),
-        BottomNavigationBarItem(icon: Icon(Icons.push_pin), label: "Lugares")],
-      ),
     );
   }
 }
