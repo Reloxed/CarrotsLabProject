@@ -1,5 +1,7 @@
 import 'package:carrots_lab_project/database/inserts.dart';
 import 'package:carrots_lab_project/main.dart';
+import 'package:carrots_lab_project/models/navigation_model.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class InsertPlace extends StatefulWidget {
@@ -90,6 +92,7 @@ class _InsertPlaceState extends State<InsertPlace> {
   }
 
   Widget _finishButton() {
+    var provider = Provider.of<NavigationModel>(context);
     return Container(
         margin: EdgeInsets.only(top: 16.0),
         padding: EdgeInsets.symmetric(horizontal: 30.0),
@@ -98,13 +101,11 @@ class _InsertPlaceState extends State<InsertPlace> {
           onPressed: () async {
             if (_formKey.currentState!.validate()) {
               uploadPlace(name, latitude, longitude);
-              setState(() {
-                MyApp.selectedIndex = 0;
-              });
+              provider.changePage(0);
             }
           },
           child: Text(
-            "GUARDAR",
+            "Guardar",
             style: Theme.of(context).textTheme.bodyText1,
           ),
         ));

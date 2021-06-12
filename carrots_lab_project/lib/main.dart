@@ -1,16 +1,21 @@
-import 'package:carrots_lab_project/screens/insert_place.dart';
-import 'package:carrots_lab_project/screens/map_main.dart';
+import 'package:carrots_lab_project/models/navigation_model.dart';
+import 'package:carrots_lab_project/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
-  runApp(MyApp());
+  await Firebase.initializeApp();
+  runApp(
+      ChangeNotifierProvider<NavigationModel>(
+      create: (context) => NavigationModel(),
+      child: MyApp(),
+    )
+  );
 }
 
 class MyApp extends StatefulWidget {
-  static int selectedIndex = 0;
   @override
   _MyAppState createState() {
     return new _MyAppState();
@@ -19,12 +24,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  static List<Widget> _widgetOptions = [
-    MapMain(),
-    InsertPlace()
-  ];
+
+
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<NavigationModel>(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -39,23 +43,7 @@ class _MyAppState extends State<MyApp> {
           color: Colors.orange
         ),
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Carrots Lab Map", style: Theme.of(context).textTheme.headline4),
-        ),
-        body: _widgetOptions.elementAt(MyApp.selectedIndex),
-        bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Theme.of(context).primaryColor,
-          currentIndex: MyApp.selectedIndex,
-          items: [BottomNavigationBarItem(icon: Icon(Icons.map), label: "Mapa"),
-            BottomNavigationBarItem(icon: Icon(Icons.push_pin), label: "Lugares")],
-          onTap: (index) => {
-            setState(() {
-              MyApp.selectedIndex = index;
-            })
-          }
-        ),
-      )
+      home: Home()
     );
   }
 }
