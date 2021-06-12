@@ -1,0 +1,12 @@
+{
+    "@@locale": "es",
+
+    "map": "Mapa",
+    "places": "Lugares",
+    "name": "Nombre",
+    "latitude": "Latitud",
+    "longitude": "Longitud",
+    "save": "Guardar",
+    "not_empty": "Este campo no puede estar vacío",
+    "not_coordinate": "Debe ser una coordenada"
+}

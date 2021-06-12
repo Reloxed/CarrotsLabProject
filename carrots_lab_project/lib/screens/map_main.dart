@@ -40,7 +40,6 @@ class _MapMainState extends State<MapMain> {
               new MarkerLayerOptions(markers: snapshot.requireData),
             ],
             nonRotatedLayers: <LayerOptions>[
-              // USAGE NOTE 3: Add the options for the plugin
               LocationOptions(
                 locationButton(),
                 onLocationRequested: (LatLngData? ld) {
@@ -71,12 +70,12 @@ class _MapMainState extends State<MapMain> {
                       case LocationServiceStatus.disabled:
                       case LocationServiceStatus.permissionDenied:
                       case LocationServiceStatus.unsubscribed:
-                        return const Icon(
+                        return Icon(
                           Icons.location_disabled,
                           color: Colors.white,
                         );
                       default:
-                        return const Icon(
+                        return Icon(
                           Icons.location_searching,
                           color: Colors.white,
                         );

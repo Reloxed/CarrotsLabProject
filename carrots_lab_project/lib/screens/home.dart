@@ -1,10 +1,9 @@
-import 'package:carrots_lab_project/database/queries.dart';
 import 'package:carrots_lab_project/models/navigation_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'insert_place.dart';
 import 'map_main.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Home extends StatefulWidget{
   @override
@@ -30,8 +29,8 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Theme.of(context).primaryColor,
           currentIndex: provider.selectedIndex,
-          items: [BottomNavigationBarItem(icon: Icon(Icons.map), label: "Mapa"),
-            BottomNavigationBarItem(icon: Icon(Icons.push_pin), label: "Lugares")],
+          items: [BottomNavigationBarItem(icon: Icon(Icons.map), label: AppLocalizations.of(context)!.map),
+            BottomNavigationBarItem(icon: Icon(Icons.push_pin), label: AppLocalizations.of(context)!.places)],
           onTap: (index) {
             provider.changePage(index);
           }

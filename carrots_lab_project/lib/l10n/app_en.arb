@@ -1,0 +1,12 @@
+{
+    "@@locale": "en",
+
+    "map": "Map",
+    "places": "Places",
+    "name": "Name",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "save": "Save",
+    "not_empty": "This field cannot be empty",
+    "not_coordinate": "This must be a coordinate"
+}

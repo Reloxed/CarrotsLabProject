@@ -1,8 +1,8 @@
 import 'package:carrots_lab_project/database/inserts.dart';
-import 'package:carrots_lab_project/main.dart';
 import 'package:carrots_lab_project/models/navigation_model.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class InsertPlace extends StatefulWidget {
   @override
@@ -46,11 +46,11 @@ class _InsertPlaceState extends State<InsertPlace> {
           textCapitalization: TextCapitalization.words,
           validator: (v) {
             if (v!.isEmpty)
-              return "Este campo no puede estar vacío";
+              return AppLocalizations.of(context)!.not_empty;
             else
               return null;
           },
-          decoration: InputDecoration(border: OutlineInputBorder(), labelText: "Nombre"),
+          decoration: InputDecoration(border: OutlineInputBorder(), labelText: AppLocalizations.of(context)!.name),
           onChanged: (value) => this.name = value,
         ));
   }
@@ -62,13 +62,13 @@ class _InsertPlaceState extends State<InsertPlace> {
           textCapitalization: TextCapitalization.words,
           validator: (v) {
             if (v!.isEmpty)
-              return "Este campo no puede estar vacío";
+              return AppLocalizations.of(context)!.not_empty;
             else if (double.tryParse(v) == null)
-              return "Debe ser una coordenada";
+              return AppLocalizations.of(context)!.not_coordinate;
             else
               return null;
           },
-          decoration: InputDecoration(border: OutlineInputBorder(), labelText: "Latitud"),
+          decoration: InputDecoration(border: OutlineInputBorder(), labelText: AppLocalizations.of(context)!.latitude),
           onChanged: (value) => this.latitude = double.tryParse(value)!,
         ));
   }
@@ -80,13 +80,13 @@ class _InsertPlaceState extends State<InsertPlace> {
           textCapitalization: TextCapitalization.words,
           validator: (v) {
             if (v!.isEmpty)
-              return "Este campo no puede estar vacío";
+              return AppLocalizations.of(context)!.not_empty;
             else if (double.tryParse(v) == null)
-              return "Debe ser una coordenada";
+              return AppLocalizations.of(context)!.not_coordinate;
             else
               return null;
           },
-          decoration: InputDecoration(border: OutlineInputBorder(), labelText: "Longitud"),
+          decoration: InputDecoration(border: OutlineInputBorder(), labelText: AppLocalizations.of(context)!.longitude),
           onChanged: (value) => this.longitude = double.tryParse(value)!
         ));
   }
@@ -105,7 +105,7 @@ class _InsertPlaceState extends State<InsertPlace> {
             }
           },
           child: Text(
-            "Guardar",
+            AppLocalizations.of(context)!.save,
             style: Theme.of(context).textTheme.bodyText1,
           ),
         ));
