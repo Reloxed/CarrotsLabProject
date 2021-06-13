@@ -116,7 +116,8 @@ class _MapMainState extends State<MapMain> {
                   margin: EdgeInsets.all(25.0),
                   child: Text(temperature, style: TextStyle(
                     fontSize: 20,
-                    fontWeight: FontWeight.bold
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Montserrat"
                   ),),
                 )
               );
