@@ -30,7 +30,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<NavigationModel>(context);
     return MaterialApp(
       localizationsDelegates: [
         AppLocalizations.delegate,

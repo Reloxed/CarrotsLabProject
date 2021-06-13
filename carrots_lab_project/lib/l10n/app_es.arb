@@ -8,5 +8,7 @@
     "longitude": "Longitud",
     "save": "Guardar",
     "not_empty": "Este campo no puede estar vacío",
-    "not_coordinate": "Debe ser una coordenada"
+    "not_coordinate": "Debe ser una coordenada",
+    "between_90": "Este número debe estar entre 90º y -90º",
+    "between_180": "Este número debe estar entre 180º y -180º"
 }

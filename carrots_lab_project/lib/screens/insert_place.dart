@@ -65,6 +65,8 @@ class _InsertPlaceState extends State<InsertPlace> {
               return AppLocalizations.of(context)!.not_empty;
             else if (double.tryParse(v) == null)
               return AppLocalizations.of(context)!.not_coordinate;
+            else if (double.tryParse(v)! > 90 || double.tryParse(v)! < -90)
+              return AppLocalizations.of(context)!.between_90;
             else
               return null;
           },
@@ -83,6 +85,8 @@ class _InsertPlaceState extends State<InsertPlace> {
               return AppLocalizations.of(context)!.not_empty;
             else if (double.tryParse(v) == null)
               return AppLocalizations.of(context)!.not_coordinate;
+            else if (double.tryParse(v)! > 180 || double.tryParse(v)! < -180)
+              return AppLocalizations.of(context)!.between_180;
             else
               return null;
           },
